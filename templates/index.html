@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="/add" class="btn btn-add">+ Add Student</a>
+
+<div class="search-box">
+    <input type="text" id="searchInput" onkeyup="searchStudent()" 
+           placeholder="Search by name, course or email...">
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for s in students %}
+        <tr>
+            <td>{{ s.id }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.course }}</td>
+            <td>{{ s.email }}</td>
+            <td>
+                <a href="/edit/{{ s.id }}" class="btn btn-edit">Edit</a>
+                <a href="/delete/{{ s.id }}" onclick="return confirmDelete()" 
+                   class="btn btn-delete">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
