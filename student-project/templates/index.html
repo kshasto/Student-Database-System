@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+    <h2>Student Management System</h2>
+
+    <!-- Add Form -->
+    <form action="/add" method="post" class="form-row">
+        <input type="text" name="name" placeholder="Student Name" required>
+        <input type="text" name="course" placeholder="Course" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <button type="submit" class="btn add-btn">+ Add Student</button>
+    </form>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+
+        {% for s in students %}
+        <tr>
+            <td>{{ s.id }}</td>
+            <td>{{ s.name }}</td>
+            <td>{{ s.course }}</td>
+            <td>{{ s.email }}</td>
+            <td>
+                <a href="/edit/{{ s.id }}">
+                    <button class="btn edit-btn">Edit</button>
+                </a>
+
+                <a href="/delete/{{ s.id }}" onclick="return confirm('Delete this student?')">
+                    <button class="btn delete-btn">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

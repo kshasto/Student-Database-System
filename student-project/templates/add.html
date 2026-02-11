@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="POST" class="form-box">
+    <input type="text" name="name" placeholder="Student Name"
+           value="{{ student.name if student else '' }}" required>
+
+    <input type="text" name="course" placeholder="Course"
+           value="{{ student.course if student else '' }}" required>
+
+    <input type="email" name="email" placeholder="Email"
+           value="{{ student.email if student else '' }}" required>
+
+    <button type="submit">💾 Save</button>
+</form>
+
+{% endblock %}

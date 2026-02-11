@@ -1,0 +1,131 @@
+/* ===== Global ===== */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* ===== Main Card ===== */
+.app-container {
+    width: 90%;
+    max-width: 1100px;
+    background: rgba(0,0,0,0.45);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    animation: fadeIn 1s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Title ===== */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    color: #00e5ff;
+}
+
+/* ===== Form ===== */
+.form-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.form-row input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+/* Add Button */
+.add-btn {
+    background: linear-gradient(45deg, #00c853, #64dd17);
+    color: #000;
+}
+
+.add-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #00e676;
+}
+
+/* Edit Button */
+.edit-btn {
+    background: linear-gradient(45deg, #2979ff, #00b0ff);
+    color: white;
+}
+
+.edit-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #40c4ff;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: linear-gradient(45deg, #ff1744, #ff5252);
+    color: white;
+}
+
+.delete-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px #ff5252;
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* Header */
+th {
+    background: rgba(0,0,0,0.7);
+    color: #00e5ff;
+}
+
+/* Rows */
+tr {
+    background: rgba(255,255,255,0.05);
+    transition: 0.3s ease;
+}
+
+/* Row Hover Effect */
+tr:hover {
+    background: rgba(0, 229, 255, 0.2);
+    transform: scale(1.01);
+}
+
+/* Links */
+a {
+    text-decoration: none;
+}
